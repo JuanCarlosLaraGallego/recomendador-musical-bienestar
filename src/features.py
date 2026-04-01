@@ -19,6 +19,25 @@ FREQUENCY_COLUMNS = [
     "frequency_video_game_music",
 ]
 
+FAV_GENRE_DUMMIES = [
+    "Classical",
+    "Country",
+    "EDM",
+    "Folk",
+    "Gospel",
+    "Hip hop",
+    "Jazz",
+    "K pop",
+    "Latin",
+    "Lofi",
+    "Metal",
+    "Pop",
+    "R&B",
+    "Rap",
+    "Rock",
+    "Video game music",
+]
+
 YES_NO_MAP = {
     "yes": 1, "no": 0,
     "si": 1, "sí": 1,
@@ -79,7 +98,9 @@ def build_input_dataframe(payload: dict) -> pd.DataFrame:
     df["genre_score_total"] = df[FREQUENCY_COLUMNS].sum(axis=1)
     df["genre_diversity"] = (df[FREQUENCY_COLUMNS] >= 2).sum(axis=1)
     df["is_musician"] = (((df["instrumentalist"] == 1) | (df["composer"] == 1))).astype(int)
-
+    for genre in FAV_GENRE_DUMMIES:
+        col_name = f"fav_genre_{genre}"
+        df[col_name] = (df["fav_genre"] == genre).astype(int)
     return df
 
 def get_frequency_columns() -> list[str]:
