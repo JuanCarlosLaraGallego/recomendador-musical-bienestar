@@ -193,4 +193,6 @@ Cuando conectes los artefactos reales, la app debería permitir:
 
 ## Autor
 
-Completar con tu nombre, contexto académico y enlace al portfolio o LinkedIn.
+Juan Carlos Lara Gallego
+https://github.com/JuanCarlosLaraGallego
+https://www.linkedin.com/in/juancarloslaragallego/
