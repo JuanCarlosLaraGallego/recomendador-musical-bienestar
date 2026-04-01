@@ -22,7 +22,7 @@ los artefactos del modelo desde la carpeta `models/`.
 - ✅ formulario operativo
 - ✅ transformación de variables base
 - ✅ inferencia preparada
-- ⏳ pendiente conectar artefactos reales exportados desde el notebook
+- ✅ artefactos conectados reales exportados desde el notebook
 """
 )
 
