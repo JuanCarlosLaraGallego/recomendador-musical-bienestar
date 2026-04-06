@@ -29,8 +29,10 @@ data/processed/*
 !data/processed/.gitkeep
 
 models/*
-!models/.gitkeep
 !models/README.md
+!models/model_pipeline.joblib
+!models/threshold.json
+!models/spotify_catalog.csv
 
 outputs/figures/*
 outputs/reports/*
