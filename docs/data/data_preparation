@@ -1,0 +1,59 @@
+# Preparación de Datos
+
+## Visión General
+
+Este documento describe los pasos realizados para limpiar y preparar el dataset para el modelado.
+
+---
+
+## 1. Limpieza de Datos
+
+Acciones realizadas:
+- Eliminación de columnas irrelevantes
+- Renombrado de variables
+- Corrección de inconsistencias
+- Tratamiento de valores nulos:
+  - Target → eliminado si falta
+  - Categóricas → imputación con la moda
+
+---
+
+## 2. Transformación del Target
+
+La variable `music_effects` se transformó a binaria:
+
+| Valor original | Codificación |
+|---------------|-------------|
+| Improve       | 1           |
+| No effect     | 0           |
+| Worsen        | 0           |
+
+---
+
+## 3. Selección de Variables
+
+Se seleccionaron variables relevantes:
+- Hábitos de escucha
+- Preferencias musicales
+- Indicadores de salud mental
+
+---
+
+## 4. División del Dataset
+
+- Train
+- Validación
+- Test
+
+Objetivo:
+- Evitar overfitting
+- Validar generalización
+
+---
+
+## 5. Balanceo de Clases
+
+Se probó  class_weight="balanced" para balancear clases.
+
+Decisión final:
+- Selección del modelo basada en rendimiento global

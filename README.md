@@ -2,6 +2,7 @@
 
 Sistema de recomendación musical orientado a bienestar emocional, construido a partir de un cuestionario de hábitos de escucha, variables de salud mental autopercibida y preferencias musicales. El proyecto combina **clasificación supervisada** para estimar probabilidad de mejora del estado de ánimo y **clustering** para segmentar perfiles de usuario y enriquecer la recomendación.
 
+
 ## Tabla de contenidos
 1. [Objetivo](#objetivo)
 2. [Problema de negocio](#problema-de-negocio)
@@ -16,35 +17,41 @@ Sistema de recomendación musical orientado a bienestar emocional, construido a 
 11. [Limitaciones](#limitaciones)
 12. [Próximos pasos](#próximos-pasos)
 
-## Objetivo
+##  Objetivo del proyecto
 
-Desarrollar un sistema capaz de:
-- estimar si un perfil de usuario tiene **probabilidad de mejorar su estado de ánimo** con música,
-- segmentar usuarios según hábitos y señales emocionales,
-- traducir ese scoring en una experiencia web sencilla basada en cuestionario.
+Desarrollar un sistema de recomendación musical orientado al bienestar emocional, capaz de estimar si un usuario tiene probabilidad de mejorar su estado de ánimo en función de sus hábitos musicales y variables de salud mental auto-reportadas.
 
-## Problema de negocio
+El sistema combina:
 
-En contextos de bienestar digital, contenido personalizado y health-tech ligera, una recomendación genérica tiene poco valor. Este proyecto busca responder a una pregunta concreta:
+- Machine Learning supervisado (clasificación)
+- Feature engineering sobre hábitos de escucha
+- Aplicación interactiva en Streamlit
 
-> **¿Podemos personalizar recomendaciones musicales basándonos en hábitos de escucha, variables emocionales y patrones de género para aumentar la probabilidad de mejora percibida?**
+##  Problema de negocio
+
+Muchas personas utilizan la música como herramienta para mejorar su estado de ánimo, pero no existe una forma estructurada de identificar qué perfiles se benefician más de este efecto.
+
+Este proyecto busca:
+
+- Detectar perfiles con mayor probabilidad de mejora
+- Sentar las bases para recomendaciones musicales personalizadas
+- Traducir datos subjetivos en decisiones accionables
 
 ## Arquitectura del proyecto
 
-El proyecto está planteado en dos capas:
+##  Cómo funciona
 
-### 1) Modelo predictivo
-Clasificador supervisado para estimar `target_improve`, variable derivada de la respuesta `music_effects`.
+1. El usuario completa un cuestionario
+2. Se transforman las variables mediante feature engineering
+3. Se aplica un modelo de Machine Learning (Random Forest)
+4. Se calcula la probabilidad de mejora
+5. Se genera una recomendación basada en un threshold
 
-### 2) Segmentación de usuarios
-Clustering con KMeans para enriquecer la lógica de recomendación con perfiles interpretables.
+##  Documentación
 
-### 3) Aplicación web
-Interfaz en **Streamlit** con formulario web para:
-- capturar respuestas del usuario,
-- transformarlas al formato del modelo,
-- cargar artefactos serializados,
-- devolver scoring y recomendación.
+Puedes consultar la documentación completa del proyecto aquí:
+
+👉 [Ver documentación completa](docs/README.md)
 
 ## Estructura del repositorio
 
