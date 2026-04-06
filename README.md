@@ -7,7 +7,7 @@ A diferencia de los recomendadores tradicionales, este sistema no se basa única
 Demo de la aplicación
 
 👉 Accede a la app aquí:
-[LINK_STREAMLIT_AQUI]
+(https://recomendador-musical-bienestar-7uymm8rhh9khq5gyc42maw.streamlit.app/)
 
 # Cómo funciona
 El usuario introduce su perfil:
