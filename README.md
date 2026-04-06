@@ -1,31 +1,25 @@
 # Recomendador musical para mejorar el bienestar 🎵
 
-Sistema de recomendación musical orientado a bienestar emocional, construido a partir de un cuestionario de hábitos de escucha, variables de salud mental autopercibida y preferencias musicales. El proyecto combina **clasificación supervisada** para estimar probabilidad de mejora del estado de ánimo y **clustering** para segmentar perfiles de usuario y enriquecer la recomendación.
+Este proyecto desarrolla un sistema de Machine Learning capaz de estimar si un usuario tiene probabilidad de mejorar su estado de ánimo a través de la música, y en función de ello generar recomendaciones musicales personalizadas.
 
+A diferencia de los recomendadores tradicionales, este sistema no se basa únicamente en preferencias musicales, sino que incorpora variables de comportamiento y estado emocional para ofrecer recomendaciones más relevantes.
 
-## Tabla de contenidos
-1. [Objetivo](#objetivo)
-2. [Problema de negocio](#problema-de-negocio)
-3. [Arquitectura del proyecto](#arquitectura-del-proyecto)
-4. [Estructura del repositorio](#estructura-del-repositorio)
-5. [Stack tecnológico](#stack-tecnológico)
-6. [Cómo ejecutar el proyecto](#cómo-ejecutar-el-proyecto)
-7. [App Streamlit](#app-streamlit)
-8. [Datos](#datos)
-9. [Metodología](#metodología)
-10. [Resultados esperados](#resultados-esperados)
-11. [Limitaciones](#limitaciones)
-12. [Próximos pasos](#próximos-pasos)
+Demo de la aplicación
 
-##  Objetivo del proyecto
+👉 Accede a la app aquí:
+[LINK_STREAMLIT_AQUI]
 
-Desarrollar un sistema de recomendación musical orientado al bienestar emocional, capaz de estimar si un usuario tiene probabilidad de mejorar su estado de ánimo en función de sus hábitos musicales y variables de salud mental auto-reportadas.
-
-El sistema combina:
-
-- Machine Learning supervisado (clasificación)
-- Feature engineering sobre hábitos de escucha
-- Aplicación interactiva en Streamlit
+# Cómo funciona
+El usuario introduce su perfil:
+hábitos de escucha
+estado emocional
+preferencias musicales
+El modelo de Machine Learning:
+analiza el perfil
+determina si el usuario es elegible para recomendación
+Si se cumple el criterio:
+se activa el sistema de recomendación
+se generan 10 canciones personalizadas
 
 ##  Problema de negocio
 
@@ -53,11 +47,30 @@ Puedes consultar la documentación completa del proyecto aquí:
 
 👉 [Ver documentación completa](docs/README.md)
 
-## Estructura del repositorio
+#  Arquitectura
+  app/ → interfaz Streamlit
+  src/features.py → ingeniería de variables
+  src/inference.py → lógica de predicción
+  src/recommender.py → sistema de recomendación
+  models/ → modelo entrenado + catálogo Spotify
 
-```bash
-"pendiente"
-```
+# Modelo
+Algoritmo: Random Forest Classifier
+Problema: Clasificación binaria
+Output: elegibilidad para recomendación
+
+# Sistema de recomendación (V1)
+Filtrado por género
+Ordenación por popularidad
+Top 10 canciones
+
+# Datos
+Dataset principal: Music & Mental Health
+Dataset adicional: catálogo de canciones Spotify
+
+# Disclaimer
+
+Este sistema no es una herramienta clínica ni un diagnóstico de salud mental. Las recomendaciones se basan en patrones estadísticos y no garantizan resultados individuales.
 
 ## Stack tecnológico
 
@@ -70,65 +83,12 @@ Puedes consultar la documentación completa del proyecto aquí:
 - streamlit
 - joblib
 
-## Cómo ejecutar el proyecto
+## Estado del proyecto
 
-### 1. Clonar el repositorio
-```bash
-git clone <URL_DEL_REPO>
-cd repo_template_recomendador_musical
-```
-
-### 2. Crear entorno virtual
-```bash
-python -m venv .venv
-```
-
-**Windows**
-```bash
-.venv\Scripts\activate
-```
-
-**macOS / Linux**
-```bash
-source .venv/bin/activate
-```
-
-### 3. Instalar dependencias
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Lanzar la app
-```bash
-streamlit run app/app.py
-```
-
-## App Streamlit
-
-La app incluida en este repositorio es una **plantilla funcional de front + inferencia**.
-
-### Qué hace ya
-- renderiza un formulario web,
-- recoge las variables principales del notebook,
-- aplica una transformación básica,
-- intenta cargar artefactos desde `models/`.
-
-### Qué falta para que prediga con el modelo real
-Debes exportar desde el notebook al menos estos artefactos:
-
-- `models/model_pipeline.joblib`
-- `models/threshold.json`
-- opcionalmente:
-  - `models/kmeans.joblib`
-  - `models/cluster_metadata.csv`
-  - `models/spotify_catalog.csv`
-
-## Datos
-
-### Fuentes contempladas en el notebook
-- `mxmh_survey_results.csv`
-- `musica_bienestar_results.csv`
-- dataset de canciones para recomendación final
+✔ Modelo entrenado
+✔ App funcional
+✔ Recomendador integrado
+🔄 Mejora futura del recomendador (ML-based)
 
 > No incluyas datasets privados, sensibles o pesados directamente en GitHub si no tienes permiso o si exceden el tamaño razonable del repo.
 
