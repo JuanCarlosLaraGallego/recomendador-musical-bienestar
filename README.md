@@ -49,30 +49,7 @@ Interfaz en **Streamlit** con formulario web para:
 ## Estructura del repositorio
 
 ```bash
-repo_template_recomendador_musical/
-├── .streamlit/
-│   └── config.toml
-├── app/
-│   └── app.py
-├── data/
-│   ├── raw/
-│   └── processed/
-├── models/
-│   ├── .gitkeep
-│   └── README.md
-├── notebooks/
-│   └── Proyecto_recomendador_musical_para_mejorar_bienestar_version_0.ipynb
-├── outputs/
-│   ├── figures/
-│   └── reports/
-├── src/
-│   ├── __init__.py
-│   ├── config.py
-│   ├── features.py
-│   └── inference.py
-├── .gitignore
-├── README.md
-└── requirements.txt
+"pendiente"
 ```
 
 ## Stack tecnológico
