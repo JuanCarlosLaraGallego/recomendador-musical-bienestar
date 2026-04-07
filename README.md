@@ -1,8 +1,10 @@
 # Recomendador musical para mejorar el bienestar 🎵
 
-Este proyecto desarrolla un sistema de Machine Learning capaz de estimar si un usuario tiene probabilidad de mejorar su estado de ánimo a través de la música, y en función de ello generar recomendaciones musicales personalizadas.
+Este proyecto desarrolla un sistema de Machine Learning que busca de estimar si un usuario tiene probabilidad de mejorar su estado de ánimo a través de la escucha de música, y en función de ello generar recomendaciones musicales personalizadas.
 
-A diferencia de los recomendadores tradicionales, este sistema no se basa únicamente en preferencias musicales, sino que incorpora variables de comportamiento y estado emocional para ofrecer recomendaciones más relevantes.
+A diferencia de los recomendadores tradicionales, este sistema no se basa únicamente en preferencias musicales, sino que incorpora variables de comportamiento y estado emocional para ofrecer recomendaciones más relevantes. 
+
+Se combinan técnicas de **clasificación supervisada** para estimar probabilidad de mejora del estado de ánimo, y de **clustering** para crear segmentos a través de la data provista por el usuario, para generar luego perfiles que permitan hacer una recomendación y a la vez enriquecer el modelo.
 
 Demo de la aplicación
 
@@ -11,17 +13,21 @@ Demo de la aplicación
 
 # Cómo funciona
 El usuario introduce su perfil:
-hábitos de escucha
-estado emocional
-preferencias musicales
+- hábitos de escucha
+- estado emocional
+- preferencias musicales
+
 El modelo de Machine Learning:
-analiza el perfil
-determina si el usuario es elegible para recomendación
+- analiza el perfil
+- determina si el usuario es elegible para hacer una recomendación
+
 Si se cumple el criterio:
-se activa el sistema de recomendación
-se generan 10 canciones personalizadas
+- se activa el sistema de recomendación
+- se genera una lista personalizada de 10 canciones
 
 ##  Problema de negocio
+
+**¿Podemos hacer recomendaciones musicales personalizadas basándonos en hábitos de escucha, preferencias de géneros musicales y variables emocionales para aumentar la probabilidad de mejora percibida?**
 
 Muchas personas utilizan la música como herramienta para mejorar su estado de ánimo, pero no existe una forma estructurada de identificar qué perfiles se benefician más de este efecto.
 
@@ -41,6 +47,8 @@ Este proyecto busca:
 4. Se calcula la probabilidad de mejora
 5. Se genera una recomendación basada en un threshold
 
+El proyecto está planteado en dos capas. La primera agrupa la clasificación, procesamiento, modelado y segmentación de los datos originales, mientras que la segunda se enfoca en compaginar las respuestas recibidas a través de la interfaz y hacer la recomendación.
+
 ##  Documentación
 
 Puedes consultar la documentación completa del proyecto aquí:
@@ -57,7 +65,7 @@ Puedes consultar la documentación completa del proyecto aquí:
 # Modelo
 Algoritmo: Random Forest Classifier
 Problema: Clasificación binaria
-Output: elegibilidad para recomendación
+Output: elegibilidad para recomendación; listado de sugerencias si el usuario es elegible
 
 # Sistema de recomendación (V1)
 Filtrado por género
@@ -66,11 +74,11 @@ Top 10 canciones
 
 # Datos
 Dataset principal: Music & Mental Health
-Dataset adicional: catálogo de canciones Spotify
+Dataset adicional: Catálogo de canciones Spotify
 
 # Disclaimer
 
-Este sistema no es una herramienta clínica ni un diagnóstico de salud mental. Las recomendaciones se basan en patrones estadísticos y no garantizan resultados individuales.
+Este sistema no es una herramienta clínica ni pretende hacer un diagnóstico de salud mental. Las recomendaciones se basan en patrones estadísticos y no garantizan resultados individuales.
 
 ## Stack tecnológico
 
@@ -90,7 +98,7 @@ Este sistema no es una herramienta clínica ni un diagnóstico de salud mental. 
 ✔ Recomendador integrado
 🔄 Mejora futura del recomendador (ML-based)
 
-> No incluyas datasets privados, sensibles o pesados directamente en GitHub si no tienes permiso o si exceden el tamaño razonable del repo.
+> No se deben incluir datasets privados, sensibles o pesados directamente en GitHub si no se tienen los permisos correspondientes o si exceden el tamaño razonable del repo.
 
 ## Metodología
 
@@ -116,27 +124,30 @@ A partir del notebook actual, el pipeline contiene estas fases:
 ## Resultados esperados
 
 Cuando conectes los artefactos reales, la app debería permitir:
-- estimar una probabilidad de mejora,
-- decidir si el usuario entra en el segmento “recomendable”,
-- asociar ese usuario a un cluster,
-- proponer géneros o canciones.
+- Estimar una probabilidad de mejora,
+- Decidir si el usuario entra en el segmento “recomendable”,
+- Asociar ese usuario a un cluster,
+- Proponer géneros o canciones.
 
 ## Limitaciones
 
 - La plantilla actual **no exporta automáticamente el modelo desde el notebook**.
 - El notebook contiene lógica exploratoria y lógica final mezcladas; conviene modularizar.
-- La app incluida usa una vía de inferencia robusta, pero depende de que serialices los artefactos reales.
+- La app incluida usa una vía de inferencia robusta, pero depende de que se serialicen los artefactos reales.
 
 ## Próximos pasos
 
-- extraer preprocessing e inferencia del notebook a `src/`,
-- guardar artefactos con `joblib`,
-- añadir catálogo musical limpio para recomendación final,
-- incorporar trazabilidad de experimentos,
-- desplegar en Streamlit Community Cloud o Render.
+- Extraer preprocessing e inferencia del notebook a `src/`,
+- Guardar artefactos con `joblib`,
+- Añadir catálogo musical limpio para recomendación final,
+- Incorporar trazabilidad de experimentos,
+- Desplegar en Streamlit Community Cloud o Render.
 
 ## Autor
 
 Juan Carlos Lara Gallego
 https://github.com/JuanCarlosLaraGallego
 https://www.linkedin.com/in/juancarloslaragallego/
+Iliana María Rojas Camacho
+https://github.com/ilianarojasswy15-design
+https://www.linkedin.com/in/iliana-rojas/ 
