@@ -15,7 +15,7 @@ El usuario introduce su perfil:
 - hábitos de escucha
 - estado emocional
 - preferencias musicales
-- 
+
 El modelo de Machine Learning:
 - analiza el perfil
 - determina si el usuario es elegible para recomendación
