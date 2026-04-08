@@ -2,7 +2,7 @@
 
 Este proyecto desarrolla un sistema de Machine Learning capaz de estimar si un usuario tiene probabilidad de mejorar su estado de ánimo a través de la música, y en función de ello generar recomendaciones musicales personalizadas.
 
-A diferencia de los recomendadores tradicionales, este sistema no se basa únicamente en preferencias musicales, sino que incorpora variables de comportamiento y estado emocional para ofrecer recomendaciones más relevantes.
+A diferencia de los recomendadores tradicionales, este sistema no se basa únicamente en preferencias musicales, sino que incorpora variables de comportamiento y estado emocional autopercibido para ofrecer recomendaciones más relevantes.
 
 Demo de la aplicación
 
@@ -10,16 +10,19 @@ Demo de la aplicación
 (https://recomendador-musical-bienestar-7uymm8rhh9khq5gyc42maw.streamlit.app/)
 
 # Cómo funciona
+
 El usuario introduce su perfil:
-hábitos de escucha
-estado emocional
-preferencias musicales
+- hábitos de escucha
+- estado emocional
+- preferencias musicales
+- 
 El modelo de Machine Learning:
-analiza el perfil
-determina si el usuario es elegible para recomendación
+- analiza el perfil
+- determina si el usuario es elegible para recomendación
+
 Si se cumple el criterio:
-se activa el sistema de recomendación
-se generan 10 canciones personalizadas
+- se activa el sistema de recomendación
+- se generan 10 canciones personalizadas
 
 ##  Problema de negocio
 
