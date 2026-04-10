@@ -169,6 +169,14 @@ if submitted:
 
                 st.caption("Enjoy the playlist 🎧")
 
+                st.markdown(
+    """
+    🎧 **¿Quieres explorar más?**  
+    Prueba esta playlist en Spotify:  
+    👉 [Abrir playlist](https://open.spotify.com/playlist/5lnwavjK5p9sWXJEhy8PqG?si=2590d2cdcba94b73)
+    """
+)
+
         else:
             st.info(
                 "Con la información disponible, no puedo decir con suficiente confianza que esta selección vaya a ayudarte especialmente. "
